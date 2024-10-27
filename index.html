@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Sequential Word Grid</title>
+  <style>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 5px;
+      margin-top: 20px;
+    }
+    .grid div {
+      width: 60px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    .button-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    #wordCount {
+      margin-top: 10px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    /* Responsive styling for screens with max width of 768px */
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(5, 1fr); /* 5 columns instead of 10 */
+      }
+      .grid div {
+        width: 100%;  /* Adjust width to be responsive */
+        height: 40px; /* Slightly larger height for readability */
+        font-size: 12px; /* Adjust font size */
+      }
+    }
+  </style>
+</head>
+<body>
+      <h2>Responsive 10x10 Sequential Word Grid</h2>
+      <div id="grid" class="grid"></div>
+      <div id="wordCount">Total Word Count: 0</div>
+      <div class="button-container">
+        <button id="addWordButton">Add Word in Order</button>
+      </div>
+  <script src="app.js"></script>
+</body>
+</html>
